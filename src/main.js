@@ -7,7 +7,7 @@ import ElementUi from 'element-ui'
 
 Vue.config.productionTip = false
 Vue.use(ElementUi)
-
+console.log(router)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -7,15 +7,22 @@ const _import = require('./import-' + process.env.NODE_ENV)
 
 const mainRoutes = {
   path: '/',
-  component: _import('Main'),
+  component: _import('main'),
+  beforeEnter (to, from, next) {
+    if (true) {
+      next({ name: 'login' })
+    }
+    next()
+  }
 
 }
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Login',
-      component: _import('Login')
-    }
+      path: '/login',
+      name: 'login',
+      component: _import('common/login')
+    },
+    mainRoutes
   ]
 })
